@@ -1,33 +1,31 @@
 #pragma once
-#include "specification.h"
 #include "imgui/imgui.h"
 #include "renderer.h"
+#include "specification.h"
 
-namespace Ui
-{
-    class Application
-    {
-    private:
-        Specification Info;
+namespace Ui {
+class Application {
+private:
+  Specification Info;
 
-    public:
-        Application(Specification &Spec);
-        ~Application();
-        
-        CVector2 GetWindowSize();
+public:
+  Application(Specification &Spec);
+  ~Application();
 
-        // Returns the active thememode
-        eTheme GetTheme();
+  CVector2 GetWindowSize();
 
-        // Sets the current theme 
-        void SetTheme(eTheme theme);
+  // Returns the active thememode
+  eTheme GetTheme();
 
-        // Start the application loop
-        void Run();
+  // Sets the current theme
+  void SetTheme(eTheme theme);
 
-        // Set the poup function
-        void SetPopup(std::function<void()> Func);
+  // Start the application loop
+  void Run();
 
-        void CallDropHandler(const char *path);
-    };
-}
+  // Set the poup function
+  void SetPopup(std::function<void()> Func);
+
+  void CallDropHandler(const char *path);
+};
+} // namespace Ui
